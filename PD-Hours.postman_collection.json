@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "b3dbe8d9-fd06-4d9a-952e-b613a0a2e282",
+		"name": "PD-Hours",
+		"description": "Documentação relacionada aos endpoints da API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38441935",
+		"_collection_link": "https://c21655.postman.co/workspace/C216-Workspace~67f55f2d-ca4d-4171-85a0-b832d06c4082/collection/38441935-b3dbe8d9-fd06-4d9a-952e-b613a0a2e282?action=share&source=collection_link&creator=38441935"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Read one employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/employee/read",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"employee",
+								"read"
+							]
+						},
+						"description": "Request to read a specific employee"
+					},
+					"response": [
+						{
+							"name": "Read one employee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/employee/read?employee_id=1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"employee",
+										"read"
+									],
+									"query": [
+										{
+											"key": "employee_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"name\": \"Ana\",\n  \"estimatedHours\": 8,\n  \"squadId\": 1,\n  \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Create employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/employee/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"employee",
+								"create"
+							]
+						},
+						"description": "Request to create employee"
+					},
+					"response": [
+						{
+							"name": "Create employee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Ana\",\n  \"estimatedHours\": 8,\n  \"squadId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/employee/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"employee",
+										"create"
+									]
+								}
+							},
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"message\": \"Employee created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Read all employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/employee/read-all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"employee",
+								"read-all"
+							]
+						},
+						"description": "Request to get all employee"
+					},
+					"response": [
+						{
+							"name": "Read all employees",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/employee/read-all",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"employee",
+										"read-all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"Ana\",\n    \"estimatedHours\": 8,\n    \"squadId\": 1,\n    \"id\": 1\n  }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Squad",
+			"item": [
+				{
+					"name": "Create squad",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"create"
+							]
+						},
+						"description": "Request to create squad"
+					},
+					"response": [
+						{
+							"name": "Create squad",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Back-end\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"message\": \"Squad created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Read one squad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/read-one",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"read-one"
+							]
+						},
+						"description": "Request to read a specific squad"
+					},
+					"response": [
+						{
+							"name": "Read one squad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-one?squad_id=1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-one"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"name\": \"Back-end\",\n  \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Read all squads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/read-all",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"read-all"
+							]
+						},
+						"description": "Request to get all squads"
+					},
+					"response": [
+						{
+							"name": "Read all squads",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-all",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\n  {\n    \"name\": \"Back-end\",\n    \"id\": 1\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Read spent hours from squad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/read-spent-hours",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"read-spent-hours"
+							]
+						},
+						"description": "Request to get all reports from every employee based on a specific squad and period of time"
+					},
+					"response": [
+						{
+							"name": "Report exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T20:10:10.999Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T20:10:10.999Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\n  {\n    \"employeeId\": 1,\n    \"employeeName\": \"Ana\",\n    \"spentHours\": 6\n  }\n]"
+						},
+						{
+							"name": "Report doens't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T20:10:10.999Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T20:10:10.999Z"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"detail\": \"No spent hours found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Read total spent hours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/read-total-spent-hours",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"read-total-spent-hours"
+							]
+						},
+						"description": "Request to get the total hours spent based on a specific squad and period of time"
+					},
+					"response": [
+						{
+							"name": "Reports doesn't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-total-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T21:06:14.997Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-total-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T21:06:14.997Z"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"detail\": \"No spent hours found\"\n}"
+						},
+						{
+							"name": "Report exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-total-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T21:06:14.997Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-total-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T21:06:14.997Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"squadId\": 1,\n  \"squadName\": \"Back-end\",\n  \"totalHours\": 6\n}"
+						}
+					]
+				},
+				{
+					"name": "Read average spent hours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/squad/read-average-spent-hours",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"squad",
+								"read-average-spent-hours"
+							]
+						},
+						"description": "Request to get the average of hours spent per day based on a specific squad and period of time"
+					},
+					"response": [
+						{
+							"name": "Reports doesn't exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-average-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T21:06:14.997Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-average-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T21:06:14.997Z"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"detail\": \"No reports found for the specified squad and period\"\n}"
+						},
+						{
+							"name": "Report exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/squad/read-average-spent-hours?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T21:06:14.997Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"squad",
+										"read-average-spent-hours"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T21:06:14.997Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"squadId\": 1,\n  \"averageHoursPerDay\": 0.55\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Create report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/report/create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"report",
+								"create"
+							]
+						},
+						"description": "Request to create a new report"
+					},
+					"response": [
+						{
+							"name": "Create report",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"Refatorando API\",\n  \"employeeId\": 1,\n  \"spentHours\": 6\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/report/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"report",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n   \"message\": \"Report created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Read all from employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/report/read-all-from-employee",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"report",
+								"read-all-from-employee"
+							]
+						},
+						"description": "Request to get all reports based on a specific employee"
+					},
+					"response": [
+						{
+							"name": "Read all from employee",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/report/read-all-from-employee?employee_id=1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"report",
+										"read-all-from-employee"
+									],
+									"query": [
+										{
+											"key": "employee_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\n  {\n    \"description\": \"Refatorando API\",\n    \"employeeId\": 1,\n    \"spentHours\": 6,\n    \"id\": 1,\n    \"createdAt\": \"2025-01-25T21:22:11.068750\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Read all reports from squad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/report/read-all-reports-from-squad",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"report",
+								"read-all-reports-from-squad"
+							]
+						},
+						"description": "Request to get all reports based on a specific squad"
+					},
+					"response": [
+						{
+							"name": "Read all reports from squad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/report/read-all-reports-from-squad?squad_id=1&start_date=2025-01-20T21:06:14.997Z&end_date=2025-01-30T20:16:14.997Z",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"report",
+										"read-all-reports-from-squad"
+									],
+									"query": [
+										{
+											"key": "squad_id",
+											"value": "1"
+										},
+										{
+											"key": "start_date",
+											"value": "2025-01-20T21:06:14.997Z"
+										},
+										{
+											"key": "end_date",
+											"value": "2025-01-30T20:16:14.997Z"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\n  {\n    \"member\": \"Ana\",\n    \"description\": \"Refatorando API\",\n    \"spentHours\": 6,\n    \"createdAt\": \"2025-01-25T21:22:11.068750\"\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

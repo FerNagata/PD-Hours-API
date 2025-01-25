@@ -55,6 +55,7 @@ Esta API desenvolvida para gerenciar um sistema de controle de horas trabalhadas
 
 - Este repositório também possui um artefato com o relatório dos testes realizados, que está disponível através do GitHub Actions.
 
+- Também foi realizado uma pequena documentação usando o postman, ele está disponível nesse repositório através do arquivo `PD-Hours.postman_collection.json` e pela URL https://documenter.getpostman.com/view/38441935/2sAYQgfnbo
 ---
 ### Padrões de Commit
 
