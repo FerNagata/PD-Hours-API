@@ -90,7 +90,7 @@ def get_total_spent_hours_from_squad(
     squadDAO = SquadDAO()
     spent_hours = squadDAO.read_total_spent_hours_from_squad(squad_id, start_date, end_date) 
     
-    if not spent_hours:
+    if not spent_hours or spent_hours[0][0] == None:
         raise HTTPException(status_code=404, detail='No spent hours found')
     
     
@@ -112,8 +112,7 @@ def get_average_spent_hours_from_squad(
         
     squadDAO = SquadDAO()
     spent_hours = squadDAO.read_average_spent_hours_from_squad(squad_id, start_date, end_date)
-    
-    if spent_hours is None:
+    if spent_hours is None or spent_hours[0][0] == None:
         raise HTTPException(status_code=404, detail="No reports found for the specified squad and period")
 
     average = spent_hours[0][0]/spent_hours[0][1]
