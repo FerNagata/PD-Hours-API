@@ -8,6 +8,7 @@ Esta API desenvolvida para gerenciar um sistema de controle de horas trabalhadas
 - Dockerfile e Docker-compose: Utilizados para containerização e fácil configuração do ambiente de desenvolvimento.
 - Pytest: Framework para a realização de testes
 - Unittest.mock: Framework utilizado para realizar mocks
+- PostgresSQL: Banco de dados relacional
 
 ## Como executar o projeto
 1. Clone o repositório:
