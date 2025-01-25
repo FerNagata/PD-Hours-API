@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_DB: pd_hours
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ../dataPostgres:/var/lib/postgresql/data
+      - ./schema/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  api:
+    container_name: api
+    build:
+      context: .  
+    ports:
+      - 8000:8000
+    environment:
+      POSTGRES_DB: pd_hours
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    depends_on:
+      - db
+
